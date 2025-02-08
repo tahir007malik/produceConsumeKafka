@@ -1,0 +1,32 @@
+python3 -m venv .venv
+source .venv/bin/activate
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+pip install python-dotenv
+create .env file
+
+BOOTSTRAP_SERVER = 
+CLUSTER_API_KEY = 
+CLUSTER_API_SECRET = 
+STREAM_GOVERNANCE_ENDPOINT = 
+STREAM_GOVERNANCE_KEY = 
+STREAM_GOVERNANCE_SECRET = 
+
+================================
+from dotenv import load_dotenv
+import os
+
+# Load .env file
+load_dotenv()
+
+# Access environment variables
+api_key = os.getenv("API_KEY")
+db_url = os.getenv("DATABASE_URL")
+debug_mode = os.getenv("DEBUG")
+
+print(f"API Key: {api_key}")
+print(f"Database URL: {db_url}")
+print(f"Debug Mode: {debug_mode}")
+================================
